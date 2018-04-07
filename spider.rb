@@ -112,11 +112,15 @@ class ProgrammableWeb
     end
 
     page.links_with(href: /\/allactivity\/removecontent/).each do |link|
-      spider.enqueue(link.href, :remove_content)
+      spider.enqueue(link.href, :delete)
+    end
+    
+    page.links_with(href: /\/allactivity\/delete/).each do |link|
+      spider.enqueue(link.href, :delete)
     end
   end
 
-  def remove_content(page, data = {})
+  def delete(page, data = {})
     spider.record page.uri
   end
 
