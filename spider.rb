@@ -9,8 +9,8 @@ require "mechanize"
 require "pry"
 
 class Spider
-  REQUEST_INTERVAL = 1
-  MAX_URLS = 1000
+  REQUEST_INTERVAL = 0.2
+  MAX_URLS = 10000
 
   attr_reader :handlers
 
